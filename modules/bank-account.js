@@ -13,8 +13,11 @@ const bankAccounts = [
     }
 ]
 module.exports = {
-    getBalance(id) {
-        const { balance } = bankAccounts.find(a => a.id === id);
-        return balance;;
+    getBalance(id, cb) {
+        setTimeout(() => {
+            const { balance } = bankAccounts.find(a => a.id === id);
+            if (!balance) cb('could not find balance');
+            cb(null, balance)
+        }, 1000)
     }
 }
