@@ -18,6 +18,6 @@ module.exports = {
             const { balance } = bankAccounts.find(a => a.id === id);
             if (!balance) cb('could not find balance');
             cb(null, balance)
-        }, 1000)
+        }, 3200)
     }
 }
